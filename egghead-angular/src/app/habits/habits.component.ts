@@ -5,13 +5,9 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-  <div class="container">
-    <h1>{{title}}</h1>
-    <app-habit-list></app-habit-list>
-  </div>
+  <app-habit-list></app-habit-list>
   `,
-  styles: ['h1 { color: blue }']
+  styles: ['h2 { color: blue }']
 })
 export class HabitsComponent {
-
 }

@@ -68,6 +68,11 @@ Whooo!  New app for dealing with routing! Doesn't build upon the previous habits
 
 Since my inital creation didn't give me the option to NOT have routing it was already in place. Was able to create some basic routing like the tutorial said and then connect the previous "habits" app to the `/habits` route after updating the default `app.components.ts` page to use the `<router-outlet />` tag.
 
+## Video 14
+Made quick and dirty Nav for the routing.  Glossed over the inclusion of the `RouterLink` to make that part work on the `<a>` tag for the nav.  
+Had no idea about the built in Emit (sp?) into vs code thought that was cool
+
+Updated the `app.component.ts` to use a template file instead of built in.  I like that a lot better.  Sam Julien switched to this style with the Router app.
 
 
 ## Development server
