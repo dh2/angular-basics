@@ -13,5 +13,5 @@ import { HabitListComponent } from './habit-list/habit-list.component';
   styles: ['h1 { color: blue }']
 })
 export class AppComponent {
-  title = 'DH2:  Angular With Egghead';
+  title = 'DH2:  Habit Tracker';
 }

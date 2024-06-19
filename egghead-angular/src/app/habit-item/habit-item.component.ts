@@ -5,7 +5,7 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-    <li>{{ habit.title }}</li>
+    <li>{{ habit['title'] }}</li>
   `,
   styles: ``
 })

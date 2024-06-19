@@ -4,7 +4,14 @@ Video series used was: [Angular Basics](https://egghead.io/courses/angular-basic
 
 Had to do a bit of code modification since where wasn't a repository to check out.  Just trying to keep up on the fly as I watched the video.
 
-This Angular version is clearly different and had to reference the documentation quite a bit in order to get some things working.
+The Angular versions for the tutorial are different from what I checked out from npm:
+
+|          | Angular | Compiler | CLI    |
+|----------|---------|----------|--------|
+| Tutorial | 8.0.0   | ~7.0.2   | ~7.0.2 |
+| My Repo  | ^18.0.0 | ^18.0.4  | ^18.0.0|
+
+As a result I have had to reference the documentation quite a bit in order to get some things working.
 
 ## Video 1
 * Asked me much different questions on the set up, never asked about the router
@@ -20,6 +27,12 @@ This Angular version is clearly different and had to reference the documentation
 * Realized I don't need the `constructor` on `ngOnInit` yet and it must be part of Author's configuration settings
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.4.
+
+## Video 4
+
+Had to read up on the differences for the typed Form* features for the updated version of Angular.   But it was a good reminder/exercise in type awareness and management.  
+
+I added the app.module.ts though I'm not entirely sure it was required.
 
 ## Development server
 
