@@ -52,7 +52,10 @@ Got the Observable/async issue sorted out since it was necessary for the `pipe` 
 Scoped styling seems interesting in lieu of JSS
 
 ## Video 10
+Putting styles in the main styles.css per tutorial
 
+## Video 11
+Had to do a quick Googling to figure out the `app.config.ts` providers addition that was needed for Angular 18
 
 ## Development server
 
