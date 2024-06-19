@@ -1,4 +1,4 @@
-# EggheadAngular
+# Egghead Angular Basics
 
 Video series used was: [Angular Basics](https://egghead.io/courses/angular-basics-888f)
 
@@ -33,6 +33,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Had to read up on the differences for the typed Form* features for the updated version of Angular.   But it was a good reminder/exercise in type awareness and management.  
 
 I added the app.module.ts though I'm not entirely sure it was required.
+
+## Video 5
+Added in the event listener from child to parent.  Didn't have to do anything extra on this one.  I did pass just the string so my typing is a bit different.
 
 ## Development server
 

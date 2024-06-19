@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { HabitItemComponent } from '../habit-item/habit-item.component';
+import { HabitFormComponent } from '../habit-form/habit-form.component';
 
 interface HabitForm {
   title?: string | null;
@@ -9,13 +9,10 @@ interface HabitForm {
 @Component({
   selector: 'app-habit-list',
   standalone: true,
-  imports: [HabitItemComponent, ReactiveFormsModule],
+  imports: [HabitItemComponent, HabitFormComponent],
   template: `
    <h2>Habits</h2>
-   <form [formGroup]="habitForm" (ngSubmit)="onSubmit(habitForm.value)">
-      <input type="text" placeholder="Add Habit" name="addField" formControlName="title" />
-      <button type="submit">Add</button>
-   </form>
+   <app-habit-form (addHabit)="onAddHabit($event)"></app-habit-form>
    <ul>
       @for (habit of habits; track habit.id) {
          <app-habit-item [habit]="habit"></app-habit-item>
@@ -25,7 +22,6 @@ interface HabitForm {
   styles: []
 })
 export class HabitListComponent implements OnInit {
-  habitForm;
   habits = [
     {
       id: 1,
@@ -49,17 +45,12 @@ export class HabitListComponent implements OnInit {
     },
   ];
 
-  constructor(private formBuilder: FormBuilder) {
-    this.habitForm = this.formBuilder.group({
-      title: '',
-    })
-  }
+  constructor() {}
 
-  onSubmit(formValues: HabitForm) {
-    if (formValues.title) {
-      const newHabit = {id: this.habits.length + 1, title: formValues.title};
+  onAddHabit(title: string) {
+    if (title) {
+      const newHabit = {id: this.habits.length + 1, title};
       this.habits.push(newHabit);
-      this.habitForm.reset();
     }
   }
 
