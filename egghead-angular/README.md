@@ -48,6 +48,12 @@ I was already doing a lot of typing.  Basically just had to move the `Habit` int
 ## Video 8
 Got the Observable/async issue sorted out since it was necessary for the `pipe` function utilized in the tutorial
 
+## Video 9
+Scoped styling seems interesting in lieu of JSS
+
+## Video 10
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

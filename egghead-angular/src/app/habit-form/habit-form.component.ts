@@ -14,7 +14,12 @@ interface HabitForm {
       <button type="submit">Add</button>
    </form>
   `,
-  styles: ``
+  styles: [`
+    button {
+      background-color: blue;
+      color: white;
+      font-size: 16px;
+    }`]
 })
 export class HabitFormComponent  implements OnInit {
   habitForm;
