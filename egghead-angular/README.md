@@ -63,6 +63,11 @@ Several key changes were hand-waived at the jump.  Had to go in and find the cha
 
 There is probably some clean up that needs to be included here since there is a `subscribe()` happening
 
+## Video 13
+Whooo!  New app for dealing with routing! Doesn't build upon the previous habits app.  Was able to deal with it, just took a minute to figure out what happened to what use to be there!
+
+Since my inital creation didn't give me the option to NOT have routing it was already in place. Was able to create some basic routing like the tutorial said and then connect the previous "habits" app to the `/habits` route after updating the default `app.components.ts` page to use the `<router-outlet />` tag.
+
 
 
 ## Development server
