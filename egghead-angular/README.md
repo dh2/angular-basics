@@ -55,7 +55,15 @@ Scoped styling seems interesting in lieu of JSS
 Putting styles in the main styles.css per tutorial
 
 ## Video 11
-Had to do a quick Googling to figure out the `app.config.ts` providers addition that was needed for Angular 18
+Had to do a quick Googling to figure out the `app.config.ts` providers addition that was needed for Angular 18 Web Client.
+There was a "quickly added and Express" server that could have been explained or at least mentioned to get the code for that change.
+
+## Video 12
+Several key changes were hand-waived at the jump.  Had to go in and find the changes that were in place for the server and the addition of the "Post" call in the server.  Also had to update the `habit.service` to make the post call.  Hadto use `subscribe` in addition to the `pipe` as referenced in the tutorial code.  If I didn't then the call wouldn't make it over to the API.
+
+There is probably some clean up that needs to be included here since there is a `subscribe()` happening
+
+
 
 ## Development server
 

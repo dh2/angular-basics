@@ -1,5 +1,5 @@
 import { Observable, Subscription } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { HabitItemComponent } from '../habit-item/habit-item.component';
@@ -30,21 +30,13 @@ export class HabitListComponent implements OnInit, OnDestroy {
 
   constructor(private habitService: HabitService) {}
   
-  onAddHabit(title: string) {
-    if (title) {
-      this.habitService.addHabit(title);
-    }
+  onAddHabit(newHabit: Habit) {
+      this.habitService.addHabit(newHabit);
   }
   
   ngOnInit(): void {
-    this.habits = this.habitService.getHabits().pipe(
-      map((habits) => {
-          return habits.map((habit) => {
-              habit.streak = habit.count > 5 ? true : false;
-              return habit;
-          });
-        }
-      )
+    this.habits = this.habitService.refetch.pipe(
+      switchMap(() => this.habitService.getHabits())
     );
   } 
 

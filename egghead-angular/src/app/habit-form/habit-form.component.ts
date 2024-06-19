@@ -32,7 +32,7 @@ export class HabitFormComponent  implements OnInit {
 
   onSubmit(formValues: HabitForm) {
     if (formValues.title) {
-      this.addHabit.emit(formValues.title);
+      this.addHabit.emit(formValues);
       this.habitForm.reset();
     }
   }
