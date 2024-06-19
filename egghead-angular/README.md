@@ -37,6 +37,11 @@ I added the app.module.ts though I'm not entirely sure it was required.
 ## Video 5
 Added in the event listener from child to parent.  Didn't have to do anything extra on this one.  I did pass just the string so my typing is a bit different.
 
+## Video 6
+Decided to go with stronger typing than given in the tutorial.  Had to update a couple of other files and create the `Habit` interface as well.  Decided to put that in with the `HabitService` that was created with this step.
+
+Angular 18 didn't immediately give access to the ` | async` as mentioned in the video so I went ahead and took a shot at using the `OnDestroy` interface and how I might manage the subscriptions.  Will be interesting to see if this bites me later on in the tutorial if/when the form gets unmounted.  
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

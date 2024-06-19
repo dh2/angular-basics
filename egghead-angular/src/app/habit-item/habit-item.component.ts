@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Habit } from '../habit.service';
 
 @Component({
   selector: 'app-habit-item',
@@ -10,5 +11,5 @@ import { Component, Input } from '@angular/core';
   styles: ``
 })
 export class HabitItemComponent {
-  @Input() habit!: Record<string, unknown>;
+  @Input() habit!: Habit;
 }
