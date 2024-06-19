@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
-import { Habit } from '../habit.service';
+import { Habit } from '../habit';
 
 @Component({
   selector: 'app-habit-item',
   standalone: true,
   imports: [],
   template: `
-    <li>{{ habit['title'] }}</li>
+    <li [style.color]="habit.streak ? 'red' : 'black'">{{ habit['title'] }} (Count: {{habit.count}})</li>
   `,
   styles: ``
 })

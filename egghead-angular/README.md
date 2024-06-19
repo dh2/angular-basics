@@ -42,6 +42,12 @@ Decided to go with stronger typing than given in the tutorial.  Had to update a 
 
 Angular 18 didn't immediately give access to the ` | async` as mentioned in the video so I went ahead and took a shot at using the `OnDestroy` interface and how I might manage the subscriptions.  Will be interesting to see if this bites me later on in the tutorial if/when the form gets unmounted.  
 
+## Video 7
+I was already doing a lot of typing.  Basically just had to move the `Habit` interface into the `habit.ts` file and update the imports using the `ng g i habit` command in the CLI
+
+## Video 8
+Got the Observable/async issue sorted out since it was necessary for the `pipe` function utilized in the tutorial
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

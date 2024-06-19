@@ -1,18 +1,21 @@
+import { Observable, Subscription } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
 import { HabitItemComponent } from '../habit-item/habit-item.component';
 import { HabitFormComponent } from '../habit-form/habit-form.component';
-import { HabitService, Habit } from '../habit.service';
-import { Subscription } from 'rxjs';
+import { HabitService } from '../habit.service';
+import { Habit } from '../habit';
 
 @Component({
   selector: 'app-habit-list',
   standalone: true,
-  imports: [HabitItemComponent, HabitFormComponent],
+  imports: [HabitItemComponent, HabitFormComponent, AsyncPipe],
   template: `
    <h2>Habits</h2>
    <app-habit-form (addHabit)="onAddHabit($event)"></app-habit-form>
    <ul>
-      @for (habit of habits; track habit.id) {
+      @for (habit of habits | async; track habit.id) {
          <app-habit-item [habit]="habit"></app-habit-item>
 }
    </ul> 
@@ -22,16 +25,10 @@ import { Subscription } from 'rxjs';
 
 
 export class HabitListComponent implements OnInit, OnDestroy {
-  habits: Habit[];
+  habits: Observable<Habit[]> | undefined;
   private habitSubs: Subscription[] = [];
 
-  constructor(private habitService: HabitService) {
-    this.habits = [];
-  }
-  
-  cbGetHabits = (habits: Habit[]) => {
-    this.habits = habits;
-  };
+  constructor(private habitService: HabitService) {}
   
   onAddHabit(title: string) {
     if (title) {
@@ -40,7 +37,15 @@ export class HabitListComponent implements OnInit, OnDestroy {
   }
   
   ngOnInit(): void {
-    this.habitSubs.push(this.habitService.getHabits().subscribe(this.cbGetHabits));
+    this.habits = this.habitService.getHabits().pipe(
+      map((habits) => {
+          return habits.map((habit) => {
+              habit.streak = habit.count > 5 ? true : false;
+              return habit;
+          });
+        }
+      )
+    );
   } 
 
   ngOnDestroy(): void {
