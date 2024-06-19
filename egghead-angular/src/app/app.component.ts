@@ -8,8 +8,12 @@ import { HabitListComponent } from './habit-list/habit-list.component';
   imports: [RouterOutlet, HabitListComponent],
   // templateUrl: './app.component.html',
   // styleUrl: './app.component.css'
-  template: `<h1>{{title}}</h1>
-  <app-habit-list></app-habit-list>`,
+  template: `
+  <div class="container">
+    <h1>{{title}}</h1>
+    <app-habit-list></app-habit-list>
+  </div>
+  `,
   styles: ['h1 { color: blue }']
 })
 export class AppComponent {
