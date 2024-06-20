@@ -77,6 +77,15 @@ Updated the `app.component.ts` to use a template file instead of built in.  I li
 ## Video 15
 Adding parameters to route.  Some minor typing differences
 
+## Video 16
+subscirbing to routes
+
+## Video 17
+Nested Routes.  Another Pivot from the First Router to the Camping planner.
+Made a simple sub-route using pages we already had by moving the habits into a subroute of the "Accoumnt" component.
+Was ableto duplicate the majority of the functionality without needs to copy all of the code
+
+
 
 ## Development server
 
