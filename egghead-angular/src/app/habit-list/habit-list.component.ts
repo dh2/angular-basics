@@ -11,21 +11,14 @@ import { Habit } from '../habit';
   selector: 'app-habit-list',
   standalone: true,
   imports: [HabitItemComponent, HabitFormComponent, AsyncPipe],
-  template: `
-   <h2>Habits</h2>
-   <app-habit-form (addHabit)="onAddHabit($event)"></app-habit-form>
-   <ul>
-      @for (habit of habits | async; track habit.id) {
-         <app-habit-item [habit]="habit"></app-habit-item>
-}
-   </ul> 
-  `,
+  templateUrl: 'habit-list.component.html',
   styles: []
 })
 
 
 export class HabitListComponent implements OnInit, OnDestroy {
   habits: Observable<Habit[]> | undefined;
+  showForm = true;
   private habitSubs: Subscription[] = [];
 
   constructor(private habitService: HabitService) {}

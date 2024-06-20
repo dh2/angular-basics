@@ -85,6 +85,18 @@ Nested Routes.  Another Pivot from the First Router to the Camping planner.
 Made a simple sub-route using pages we already had by moving the habits into a subroute of the "Accoumnt" component.
 Was ableto duplicate the majority of the functionality without needs to copy all of the code
 
+## Video 18
+Accessing parent route parameters to show data.  There was a lot of data that was in subsequent files so went for reinforcement instead.  
+
+### Server
+Updated the server to have an `Account` api that could be accessed from the app.  Should have picked something else for clarity but just C&P the data structure for habits and created info/habits data for 3 different accounts.  Built the basic endpoints to grab the data from the express server.
+
+Created a Bruno collection for quick testing the Express server when I had completed the account endpoints
+Currently there are no mutations on the account end point.
+
+### App
+The app I had to add a new `account.service.ts` file as well as updating the routes and the account-based components.  I created a new account-habits components that leveraged the `habits-list` template once I broke it out into an HTML file.  Had compilation issues with the form part of the list so I just commented that out for the time being.  I did try adding a common setting across the components `showForm` and using `@if` to conditionally show, but it didn't matter.  This was a full crash of the server and it would not run at all.
+
 
 
 ## Development server

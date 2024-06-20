@@ -1,14 +1,14 @@
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { Account } from '../account';
+import { AccountService } from '../account.service';
 
 @Component({
   selector: 'app-account-detail',
   standalone: true,
   imports: [RouterLink, RouterOutlet, RouterLinkActive],
   template: `
-    <p>
-      Account #{{this.id}} works!
-    </p>
     <ul>
         <li><a class="nav-link" [routerLink]="['/account', 1]">One</a></li>
         <li><a class="nav-link" [routerLink]="['/account', 2]">Two</a></li>
@@ -59,6 +59,7 @@ li {
 }
   `
 })
+
 export class AccountDetailComponent implements OnInit{
   id!: string;
 

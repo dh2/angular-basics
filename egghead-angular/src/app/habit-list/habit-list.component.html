@@ -1,0 +1,9 @@
+<h2>Habits</h2>
+<!-- @if (showForm) {
+    <app-habit-form (addHabit)="onAddHabit($event)"></app-habit-form>
+} -->
+<ul>
+    @for (habit of habits | async; track habit.id) {
+        <app-habit-item [habit]="habit"></app-habit-item>
+    }
+</ul> 
