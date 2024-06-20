@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-account',
   standalone: true,
-  imports: [],
-  template: `
-    <p>
-      account works!
-    </p>
-  `,
+  imports: [RouterLink],
+  templateUrl:'account.component.html',
   styles: ``
 })
 export class AccountComponent {

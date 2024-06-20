@@ -74,6 +74,9 @@ Had no idea about the built in Emit (sp?) into vs code thought that was cool
 
 Updated the `app.component.ts` to use a template file instead of built in.  I like that a lot better.  Sam Julien switched to this style with the Router app.
 
+## Video 15
+Adding parameters to route.  Some minor typing differences
+
 
 ## Development server
 
