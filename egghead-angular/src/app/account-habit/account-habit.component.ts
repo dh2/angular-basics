@@ -22,14 +22,11 @@ export class AccountHabitComponent implements OnInit {
   constructor(private accountService: AccountService, private route:ActivatedRoute) {}
 
   ngOnInit(): void {
-    if (this.route.parent) {
-      this.route.parent.paramMap.subscribe((params: ParamMap) => {
+      this.route.paramMap.subscribe((params: ParamMap) => {
           this.id = params.get('id') ?? 1;
-        })
-      } else {
-        this.habits = of([]);
-      }
-      this.habits =  this.accountService.getHabits(this.id);
+      });
+
+      this.habits = this.accountService.getHabits(this.id);
   }
 
   onAddHabit = () => {};

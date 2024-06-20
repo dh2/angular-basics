@@ -97,7 +97,12 @@ Currently there are no mutations on the account end point.
 ### App
 The app I had to add a new `account.service.ts` file as well as updating the routes and the account-based components.  I created a new account-habits components that leveraged the `habits-list` template once I broke it out into an HTML file.  Had compilation issues with the form part of the list so I just commented that out for the time being.  I did try adding a common setting across the components `showForm` and using `@if` to conditionally show, but it didn't matter.  This was a full crash of the server and it would not run at all.
 
+## Video 19
+Moving to having the parent routes always passed through.  Was able to figure out how to get the setting into the `app.config.ts` instead of the `app.module.ts` as was done in the tutorial
 
+## Fin.
+
+--------------------------------------
 
 ## Development server
 

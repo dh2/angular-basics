@@ -20,16 +20,12 @@ export class AccountInfoComponent implements OnInit{
   constructor(private account: AccountService, private route:ActivatedRoute) {}
   
   ngOnInit(): void {
-    if (this.route.parent) {
-      this.route.parent.paramMap.subscribe((params: ParamMap) => {
-          const id = params.get('id') ?? 1;
-          return this.account.getInfo(id).subscribe((data: Account) => {
-            this.info = data;
-          });
-        })
-    } else {
-      this.info = {name: 'Unknown', age: '-'};
-    }
+    this.route.paramMap.subscribe((params: ParamMap) => {
+        const id = params.get('id') ?? 1;
+        return this.account.getInfo(id).subscribe((data: Account) => {
+          this.info = data;
+        });
+      })
   }
 
   
